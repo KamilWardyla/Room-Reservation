@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} All Roms {% endblock %}
+{% block content %}
+{% for room in all_rooms %}
+<p>Actually date: {{ date_time_now }}</p>
+<div>Room: <a href="{% url 'room'  room.id %}">{{ room.room_name }}</a></div>
+{% if reservation.date ==  date_time_now %}
+<p>Room unavailable</p>
+{% else %}
+<p>Room available</p>
+{% endif %}
+<a href="{% url 'edit_room' room.id%}">Edit Room</a>
+<a href="{% url 'delete_room' room.id%}">Delete Room</a>
+<a href="{% url 'reserve' room.id%}">Reserve Room</a>
+{% endfor %}
+{% endblock %}

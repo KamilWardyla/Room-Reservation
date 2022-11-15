@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Edit room{% endblock %}
+{% block content %}
+<p>Dou you want to edit room {{ room.room_name }}</p>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Edit Room</button>
+</form>
+{% endblock %}

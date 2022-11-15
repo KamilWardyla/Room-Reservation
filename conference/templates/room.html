@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Room {{ rome.rome_name }} {% endblock %}
+{% block content %}
+<p>Room Name: {{ room.room_name }}</p>
+<p>Room Capacity: {{ room.room_capacity }}</p>
+<p>Projector available: {{ room.projector_availability }}</p>
+<a href="{% url 'edit_room' room.id %}">Edit</a>
+<a href="{% url 'delete_room' room.id %}">Delete</a>
+<a href="{% url 'reserve' room.id %}">Reserve</a>
+<div>Reservation</div>
+{% if reservation %}
+{% for res in reservation %}
+<p>Date: {{res.date}} Comment: {{res.comment}}</p>
+{% endfor %}
+{% endif %}
+{% endblock %}

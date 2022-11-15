@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Add Conference Room {% endblock %}
+{% block content %}
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Add Room</button>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Delete Room {% endblock %}
+{% block content %}
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Do you want to delete room: {{ room.room_name }}</p>
+    <button type="submit">Delete Room</button>
+</form>
+{% endblock %}
